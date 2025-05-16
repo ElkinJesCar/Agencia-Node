@@ -1,0 +1,34 @@
+.col-md-12
+
+    // Título centrado de la sección
+    h1.text-center Opiniones de nuestros Clientes
+
+    // Subtítulo en forma de cita, también centrado
+    blockquote.text-center Lee sobre nuestros Clientes y sus experiencias 
+
+    // Fila de Bootstrap que contendrá los testimonios en formato de tarjeta
+    .row.testimoniales
+
+        // Itera sobre el arreglo 'testimoniales' enviado desde el controlador
+        each testimonial in testimoniales
+
+            // Cada testimonio ocupará 6 columnas en md y 4 columnas en lg (3 por fila)
+            div.col-md-6.col-lg-4.mb-4
+
+                // Tarjeta Bootstrap para mostrar el testimonio
+                .card
+
+                    // Cuerpo de la tarjeta
+                    .card-body
+
+                        // Cita dentro de la tarjeta usando la clase blockquote Un <blockquote> es una etiqueta HTML utilizada para citas textuales extensas que provienen de otra fuente. Visualmente, los navegadores suelen mostrar este elemento con una sangría, cursiva o estilo especial para destacar que se trata de una cita textual o declaración.
+                        blockquote.blockquote
+
+                            // Párrafo con margen inferior (mb-0), muestra el mensaje del cliente
+                            p.mb-0
+                                | #{testimonial.mensaje}
+
+                            // Footer con estilo de cita, muestra el nombre del cliente
+                            footer.blockquote-footer
+                                | #{testimonial.nombre}
+

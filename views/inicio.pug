@@ -1,0 +1,36 @@
+extends ./layout/index
+
+//- Define el bloque "slider" (reemplaza el block slider del layout)
+block slider 
+  .slider
+    h1 Rio de Janeiro
+    em aventura
+    //- Este slider podría tener fondo CSS, texto animado, etc.
+
+//- Bloque principal de contenido (reemplaza block contenido del layout)
+block contenido 
+  main.container.mt-5
+    h2.text-center.mb-5 Sobre Nosotros
+    .row.mb-5
+      .col-md-6
+        p Vestibulum porta nec nibh eu aliquet...
+        p Nullam vitae ullamcorper turpis...
+      .col-md-6
+        img(src="/img/inicio_nosotros.jpg", class="img-fluid")
+
+  .container
+    include ./layout/viajes
+  .descuento
+    .container
+      .row
+        .col-md-6
+          .contenido
+            h3 5% de Descuento
+            p.titulo Viaje a Canadá
+            p.fecha 20 de Marzo 2021 - 28 de Marzo 2021
+            p.precio $2,500 USD
+
+  .container
+    h2.mt-5.text-center Opiniones
+    .row 
+      include ./layout/testimoniales

@@ -1,0 +1,39 @@
+footer.container.py-5
+
+
+    // Crea una fila para organizar columnas en formato grid (Bootstrap)
+    .row
+
+        // Primera columna del footer: ocupa 6 de 12 columnas en pantallas medianas
+        .col-md-6
+
+            // Un contenedor de navegación con clases para estilo:
+            // 'nav' = clase base de navegación de Bootstrap
+            // 'footer' = clase personalizada (puede aplicarse en CSS)
+            // 'justify-content-center' centra los enlaces en pantallas pequeñas
+            // 'justify-content-md-start' los alinea a la izquierda en pantallas medianas+
+            nav.nav.footer.justify-content-center.justify-content-md-start
+
+                // Enlace a la sección "Nosotros" con estilo de Bootstrap
+                a.nav-link(href="/nosotros") Nosotros
+
+                // Enlace a la sección "Viajes"
+                a.nav-link(href="/viajes") Viajes
+
+                // Enlace a la sección "Testimoniales"
+                a.nav-link(href="/testimoniales") Testimoniales
+
+        // Segunda columna del footer: toma el espacio restante (por eso solo .col)
+        .col
+
+            // Parágrafo con clases para alinear el texto:
+            // 'text-center' centra el texto en pantallas pequeñas
+            // 'text-md-right' alinea el texto a la derecha en pantallas medianas+
+            p.copyright.text-center.text-md-right
+
+                // Texto plano dentro del parágrafo (no una etiqueta HTML)
+                | Todos los Derechos Reservados 
+
+                // Inserta el valor de la variable 'actualYear' que viene desde Express
+                // res.locals.actualYear se inyecta en las vistas automáticamente
+                span= actualYear

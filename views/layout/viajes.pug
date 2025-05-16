@@ -1,0 +1,72 @@
+// Título centrado con margen inferior (mb-5) para la sección de viajes
+h2.text-center.mb-5 Próximos Viajes
+
+// Fila de Bootstrap que contendrá las tarjetas de los viajes
+.row.proximos-viajes
+
+  // Itera sobre el arreglo 'viajes' enviado desde el controlador
+  each viaje in viajes
+
+    // Cada tarjeta ocupa 6 columnas en md y 4 columnas en lg, con margen inferior
+    div.col-md-6.col-lg-4.mb-4
+
+      // Tarjeta Bootstrap
+      .card
+
+        // Imagen en la parte superior de la tarjeta. Se arma la ruta dinámicamente.
+        img.card-img-top(src=`img/destinos_${viaje.imagen}.jpg`)
+
+        // Cuerpo de la tarjeta donde se muestra la información
+        .card-body
+
+          // Título del viaje
+          h2= viaje.titulo
+
+          // Primer párrafo: muestra fechas de ida y vuelta con ícono de calendario
+          p
+            svg.icon.icon-tabler.icon-tabler-calendar-event(
+              xmlns='http://www.w3.org/2000/svg',
+              width='44',
+              height='44',
+              viewbox='0 0 24 24',
+              stroke-width='1.5',
+              stroke='#dc135f',
+              fill='none',
+              stroke-linecap='round',
+              stroke-linejoin='round'
+            )
+              path(stroke='none', d='M0 0h24v24H0z', fill='none')
+              rect(x='4', y='5', width='16', height='16', rx='2')
+              line(x1='16', y1='3', x2='16', y2='7')
+              line(x1='8', y1='3', x2='8', y2='7')
+              line(x1='4', y1='11', x2='20', y2='11')
+              rect(x='8', y='15', width='2', height='2')
+
+            // Muestra las fechas del viaje
+            |  #{viaje.fecha_ida} - #{viaje.fecha_vuelta}
+
+          // Segundo párrafo: muestra el precio con ícono de etiqueta
+          p
+            svg.icon.icon-tabler.icon-tabler-tag(
+              xmlns='http://www.w3.org/2000/svg',
+              width='44',
+              height='44',
+              viewbox='0 0 24 24',
+              stroke-width='1.5',
+              stroke='#dc135f',
+              fill='none',
+              stroke-linecap='round',
+              stroke-linejoin='round'
+            )
+              path(stroke='none', d='M0 0h24v24H0z', fill='none')
+              path(d='M11 3l9 9a1.5 1.5 0 0 1 0 2l-6 6a1.5 1.5 0 0 1 -2 0l-9 -9v-4a4 4 0 0 1 4 -4h4')
+              circle(cx='9', cy='9', r='2')
+
+            // Muestra el precio del viaje
+            |  #{viaje.precio}
+
+          // Tercer párrafo: muestra una parte de la descripción (los primeros 100 caracteres)
+          p= viaje.descripcion.substr(0, 100)
+
+          // Botón para ir al detalle del viaje, usando su 'slug' como parte de la ruta
+          a(href=`viajes/${viaje.slug}`, class="btn btn-success btn-block") Más Información

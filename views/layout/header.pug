@@ -1,0 +1,44 @@
+header
+
+    // Div con clase personalizada 'navegacion' (puedes darle estilo en CSS)
+    .navegacion
+
+        // Contenedor Bootstrap que centra el contenido y le da márgenes laterales
+        .container
+
+            // Fila de Bootstrap para dividir en columnas. Clases:
+            // justify-content-center: centra contenido en pantallas pequeñas
+            // justify-content-md-between: distribuye espacio en pantallas medianas+
+            // align-items-center: centra verticalmente el contenido dentro de la fila
+            // py-4: padding vertical de 1.5rem
+            .row.justify-content-center.justify-content-md-between.align-items-center.py-4
+
+                // Primera columna: ocupa 4 columnas en pantallas medianas, 6 en pequeñas
+                .col-md-4.col-6
+
+                    // Enlace a la página de inicio (raíz "/")
+                    a(href="/")
+
+                        // Imagen del logo del sitio. Ruta relativa desde carpeta 'public/img'
+                        // El atributo alt es importante para accesibilidad
+                        img(src="/img/logo.svg", alt="sitio logo")
+
+                // Segunda columna: ocupa 8 columnas en pantallas medianas
+                .col-md-8
+
+                    // Elemento <nav> con clases:
+                    // mt-5: margen arriba en pantallas pequeñas
+                    // mt-md-0: elimina ese margen en pantallas medianas+
+                    // nav: clase base de navegación en Bootstrap
+                    // justify-content-center: centra los enlaces en pantallas pequeñas
+                    // justify-content-md-end: alinea a la derecha en pantallas medianas+
+                    nav.mt-5.mt-md-0.nav.justify-content-center.justify-content-md-end
+
+                        // Enlace a la sección "Nosotros" con estilo de Bootstrap
+                        a.nav-link(href="/nosotros") Nosotros
+
+                        // Enlace a la sección "Viajes"
+                        a.nav-link(href="/viajes") Viajes
+
+                        // Enlace a la sección "Testimoniales"
+                        a.nav-link(href="/testimoniales") Opiniones
