@@ -1,9 +1,9 @@
 import Sequelize from 'sequelize';
 
 // Configuración de la conexión a la base de datos
-const db = new Sequelize('viajes', 'root', '', {
-    host: '127.0.0.1',
-    port: 3306,
+const db = new Sequelize('AgenciaNode_searchtone', 'AgenciaNode_searchtone', '38b7c4011dab0d76adfa644afbbf36d4893bac2f', {
+    host: '5lbyl.h.filess.io',
+    port: 3307,
     dialect: 'mysql',  // Cambié 'mysql' por 'mariadb'
     define: {
         timestamps: false
